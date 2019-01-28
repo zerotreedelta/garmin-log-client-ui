@@ -1,17 +1,17 @@
 export default {
     MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
-      REGION: "us-east-1",
-      BUCKET: "training-servrerless-app-file-upload"
+      REGION: "my-region",
+      BUCKET: "bucket-for-files"
     },
     apiGateway: {
-      REGION: "us-east-1",
-      URL: "https://2d3evfkybh.execute-api.us-east-1.amazonaws.com/prod"
+      REGION: "my-region",
+      URL: "my-api-gateway"
     },
     cognito: {
-      REGION: "us-west-2",
-      USER_POOL_ID: "us-west-2_TslO9ktcc",
-      APP_CLIENT_ID: "4qpv0p7ojqsf62h7b8tqfq590b",
-      IDENTITY_POOL_ID: "us-west-2:e31263bd-ff33-4387-9e1b-6c5e47073c98"
+      REGION: "my-region",
+      USER_POOL_ID: "my-pool-id",
+      APP_CLIENT_ID: "my-app-id",
+      IDENTITY_POOL_ID: "my-identity-pool-id:"
     }
   };
