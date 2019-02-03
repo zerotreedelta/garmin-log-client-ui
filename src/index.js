@@ -4,11 +4,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 
 import Amplify from "aws-amplify"
+
 import config from "./config/config"
 
 import App from './App';
 import './index.css';
 
+
+// TODO: might be cool to write this object out during build and load it
 Amplify.configure({
     Auth: {
       mandatorySignIn: true,

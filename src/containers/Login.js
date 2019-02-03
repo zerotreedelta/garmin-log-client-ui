@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import { Auth } from "aws-amplify";
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Auth, Amplify } from "aws-amplify";
+
+import config from "../config/config"
 
 import LoaderButton from "../components/LoaderButton"
 import "./Login.css";
@@ -34,6 +36,24 @@ export default class Login extends Component {
     try {
       await Auth.signIn(this.state.email, this.state.password);
       this.props.userHasAuthenticated(true);
+
+      // TODO: would be better to config storage/api after user auths?
+      // Amplify.configure({
+      //   Storage: {
+      //     region: config.s3.REGION,
+      //     bucket: config.s3.BUCKET,
+      //     identityPoolId: config.cognito.IDENTITY_POOL_ID
+      //   },
+      //   API: {
+      //     endpoints: [
+      //       {
+      //         name: "notes",
+      //         endpoint: config.apiGateway.URL,
+      //         region: config.apiGateway.REGION
+      //       },
+      //     ]
+      //   }
+      // });
 
     } catch (e) {
       alert(e.message);

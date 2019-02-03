@@ -1,17 +1,17 @@
 export default {
     MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
-      REGION: "my-region",
-      BUCKET: "bucket-for-files"
+      REGION: process.env.REACT_APP_S3_REGION,
+      BUCKET: process.env.REACT_APP_S3_UPLOAD_BUCKET
     },
     apiGateway: {
-      REGION: "my-region",
-      URL: "my-api-gateway"
+      REGION: process.env.REACT_APP_GWY_REGION,
+      URL: process.env.REACT_APP_GWY_URL
     },
     cognito: {
-      REGION: "my-region",
-      USER_POOL_ID: "my-pool-id",
-      APP_CLIENT_ID: "my-app-id",
-      IDENTITY_POOL_ID: "my-identity-pool-id:"
+      REGION: process.env.REACT_APP_COGNITO_REGION,
+      USER_POOL_ID: process.env.REACT_APP_USER_POOL_ID,
+      APP_CLIENT_ID: process.env.REACT_APP_COGNITO_CLIENT_ID,
+      IDENTITY_POOL_ID: process.env.REACT_APP_IDENTITY_POOL_ID
     }
   };
