@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# for debug... hits the aws ssm and dumps the relevant endpoints to a .json file
 if [ -z "$1" ]
 then
   echo "defaulting to get dev env settings"

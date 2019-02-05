@@ -14,8 +14,11 @@
     "serverless-offline": "^4.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "prepare": "AWS_REGION=us-east-1 node ./src/scripts/setReactEnv.js",
+    "start": "NODE_ENV=development npm run-script prepare && react-scripts start",
     "build": "react-scripts build",
+    "build:development": "NODE_ENV=development npm run prepare && npm run build",
+    "build:production": "NODE_ENV=production npm run prepare &&  npm run build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "deploy": "aws s3 sync build/ s3://serverless-training-notes-app-client --delete",

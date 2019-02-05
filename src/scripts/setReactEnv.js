@@ -1,5 +1,8 @@
 'use strict'
 
+// utility script that creates a .env script depending on the value of NODE_ENV
+// this is required and incorporated into the production build process via npm build
+
 const AWS = require('aws-sdk')
 const fs = require('fs')
 const ENV_PROFILE = process.env.NODE_ENV
